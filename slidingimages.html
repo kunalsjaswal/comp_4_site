@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let images = [];
+      let time = 3000;
+      let i = 0;
+      images[0] = "img/model1.jpg";
+      images[1] = "img/furn.jpg";
+      images[2] = "img/model2.jpg";
+      images[3] = "img/elect.jpeg";
+
+      function changeimg() {
+        document.slide.src = images[i];
+
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+
+        setTimeout("changeimg()", time);
+      }
+      window.onload = changeimg;
+    </script>
+
+    <img name="slide" width="300px" height="300px" />
+  </body>
+</html>
